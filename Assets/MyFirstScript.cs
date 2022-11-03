@@ -5,6 +5,7 @@ public class MyFirstScript : MonoBehaviour //class neve meg kell egyezni a scrip
 
     void Start() //method. ez ami végre tud hajtódni folymatosan. "fentrõl lefelé"
     {
+        //commit test
         Debug.Log("ello World");
         Debug.Log("ello " + name); //"name" a game object nevére hivatkozik
 
