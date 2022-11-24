@@ -2,8 +2,28 @@
 using UnityEngine;
 
 public class C14LKKT : MonoBehaviour
+
 {
-    [SerializeField] int numA, numB, lkkt, lnko;
+    // Vigyázok arra, hogy ne kerülhessek végtelen ciklusba
+    [SerializeField, Min(1)] int a, b;   // Bemeneti változók
+    [SerializeField] int result;         // Kimeneti változó
+
+    void OnValidate()
+    {
+        // a minden többszörösét megnézem, hogy osztható-e b-vel
+        // Ha találok egy ilyet, kilépek a ciklusból
+
+        int numberToTest = a;
+
+        while (numberToTest % b != 0)
+        {
+            numberToTest += a;
+        }
+
+        result = numberToTest;
+    }
+}
+    /*[SerializeField] int numA, numB, lkkt, lnko;
 
     private void OnValidate()
     {
@@ -37,10 +57,10 @@ a hányados 1, a maradék 6
 elosztjuk 12-t 6-tal
 a hányados 2, a maradék 0,
      */
-    {
+    /*{
         if (a > b)
         {
-
+            
             int remain = 0;
             while (a % b > 0)
             {
@@ -70,7 +90,7 @@ a hányados 2, a maradék 0,
         
 
     }
-    
-}
+    */
+
 
 
