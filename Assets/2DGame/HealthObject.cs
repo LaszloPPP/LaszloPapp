@@ -8,6 +8,8 @@ class HealthObject : MonoBehaviour
     [SerializeField] TMP_Text textComponent;
     [SerializeField] int maxHealth=100;
 
+    [SerializeField] GameObject objectToTurnOnWhenDie;
+
     [SerializeField] Color maxHealthColor, zeroHealthColor;
 
     int currentHealth;
@@ -29,6 +31,7 @@ class HealthObject : MonoBehaviour
     {
         currentHealth = 0;
         UpdateText();
+        TestDeath();
     }
 
     public bool IsDead()
@@ -41,5 +44,14 @@ class HealthObject : MonoBehaviour
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         UpdateText();
+        TestDeath();
     }
+
+    void TestDeath()
+    {
+        if (IsDead())
+        {
+            objectToTurnOnWhenDie?.SetActive(true); //?. arra kell hogy ha bekötött objectrl van szó, de nincs bekötve semmi akkor sem errort ad.
+        } 
+    }    
 }
