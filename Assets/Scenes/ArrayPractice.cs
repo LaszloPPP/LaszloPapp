@@ -21,6 +21,7 @@ public class ArrayPractice : MonoBehaviour
         {
             Debug.Log(element);
 
+
         }
 
         //kiíratni sorrendben az array elemeit érték szerint
