@@ -11,7 +11,8 @@ public class minmaxtombon : MonoBehaviour
     private void OnValidate()
     {
 
-        /*if (myArray.Length > 0)
+        /*
+        if (myArray.Length > 0)
         {
             float min = myArray[0];
             float max = myArray[0];
