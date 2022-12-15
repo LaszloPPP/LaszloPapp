@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &20876268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,8 +377,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32027f259850eb24498b485ced781ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: the quick brown fox jumps over the lazy dog
-  uniqCharacterCount: 27
+  text: 
+  uniqCharacterCount: 0
 --- !u!4 &665454887
 Transform:
   m_ObjectHideFlags: 0
@@ -634,7 +634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cb11560b9caeb64785fb4019248d153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  n: 15
+  n: 4
 --- !u!1 &1549163094
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ public class fibonacci : MonoBehaviour
         {
             int sum = fibo[i-1]+fibo[i-2];
             fibo[i] = sum;
-            Debug.Log(fibo[i]);
+            Debug.Log("Fibo: "+ fibo[i]);
         }
     }
 }
