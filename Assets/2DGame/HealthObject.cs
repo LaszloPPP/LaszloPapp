@@ -6,7 +6,7 @@ using TMPro;
 class HealthObject : MonoBehaviour
 {
     [SerializeField] TMP_Text textComponent;
-    [SerializeField] int maxHealth=100;
+    [SerializeField] int maxHealth = 100;
 
     [SerializeField] GameObject objectToTurnOnWhenDie;
 
@@ -14,9 +14,28 @@ class HealthObject : MonoBehaviour
 
     int currentHealth;
 
+    const string healthKey = "health";
+
+   
+
+    private void OnDestroy()
+    {
+        PlayerPrefs.SetInt(healthKey, currentHealth);
+    }
+
+
+
     void Start()
     {
-        currentHealth = maxHealth;
+        if (PlayerPrefs.HasKey(healthKey))
+        {
+            currentHealth = PlayerPrefs.GetInt(healthKey);
+        }
+        if (currentHealth == 0)
+        {
+            currentHealth = maxHealth;
+
+        }
         UpdateText();
     }
 
@@ -24,7 +43,7 @@ class HealthObject : MonoBehaviour
     {
         textComponent.text = "Health:" + currentHealth;
         float healthRatio = (float)currentHealth / maxHealth;
-        textComponent.color = Color.Lerp(zeroHealthColor,maxHealthColor, healthRatio);
+        textComponent.color = Color.Lerp(zeroHealthColor, maxHealthColor, healthRatio);
     }
 
     public void Kill()
@@ -52,6 +71,6 @@ class HealthObject : MonoBehaviour
         if (IsDead())
         {
             objectToTurnOnWhenDie?.SetActive(true); //?. arra kell hogy ha bekötött objectrl van szó, de nincs bekötve semmi akkor sem errort ad.
-        } 
-    }    
+        }
+    }
 }

@@ -1814,7 +1814,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   startPoint: {fileID: 1100357652}
-  projectile: {fileID: 3560416355705274122, guid: 0d1d183ba60f75a4997fcd4e07d29ec3, type: 3}
+  projectiles:
+  - {fileID: 3560416355705274122, guid: 0d1d183ba60f75a4997fcd4e07d29ec3, type: 3}
+  - {fileID: 3560416355705274122, guid: c88ee9f64b02c6f4c831687d957e1eb4, type: 3}
+  - {fileID: 3560416355705274122, guid: 6f34390429906d54a9b59ba17196db9d, type: 3}
+  - {fileID: 3560416355705274122, guid: 60d81a6bbc141b242b3cb430b19ead23, type: 3}
+  - {fileID: 3560416355705274122, guid: 7d133f658bc11cd478c50e520484b3cd, type: 3}
+  - {fileID: 3560416355705274122, guid: e35c3c98df5ffa342bdb9a204c3a58ac, type: 3}
   fireKey: 120
 --- !u!1 &1564468251
 GameObject:
