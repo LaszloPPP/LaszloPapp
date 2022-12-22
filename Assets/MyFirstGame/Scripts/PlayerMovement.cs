@@ -6,6 +6,15 @@ public class PlayerMovement : MonoBehaviour
     /*[SerializeField] Vector3 velocity;*/
     [SerializeField] float speed;
     [SerializeField] float angularSpeed = 180;
+    [SerializeField] Animator anim;
+
+    private void OnValidate()
+    {
+        if (anim == null)
+        {
+            anim = GetComponentInChildren<Animator>();
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -32,6 +41,11 @@ public class PlayerMovement : MonoBehaviour
         Vector3 direction = new Vector3(x, 0, z);
         direction.Normalize();
         Vector3 velocity = direction * speed;
+
+        bool isMoving = velocity != Vector3.zero;
+
+        anim.SetBool("isRunning",isMoving);
+
         transform.position += velocity * Time.deltaTime; // transform.position = component.parameter // Time.deltaTime függetleníti a mozgást(vagy más változást) FPStõl
         if (direction != Vector3.zero)
         {

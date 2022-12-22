@@ -8,11 +8,19 @@ public class Projectile : MonoBehaviour
 
     Vector2 velocity;
 
-    float gameStartTime;
+    //float gameStartTime;
 
-    private void Start()
+    void Start()
     {
-        gameStartTime = Time.time;
+        //gameStartTime = Time.time;
+        StartCoroutine(DestroyCoroutine());
+    }
+
+    IEnumerator DestroyCoroutine()
+    {
+        yield return new WaitForSeconds(lifeTime);
+        yield return null; //frame végéig vár
+        Destroy(gameObject);
     }
 
     public void SetVelocity(Vector2 vel)
@@ -23,11 +31,13 @@ public class Projectile : MonoBehaviour
     private void Update()
     {
 
+        /*
         float projectileAge = Time.time-gameStartTime;
         transform.position += (Vector3)velocity * Time.deltaTime;
         if (projectileAge > lifeTime)
         {
             Destroy(gameObject);
         }
+        */
     }
 }
